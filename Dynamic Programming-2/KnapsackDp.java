@@ -1,11 +1,9 @@
-package Knapsack;
-
 import java.util.Scanner;
 
-public class KnapsackDp {
+public class Solution {
 
-	public static int knapsack(int[] weight,int value[],int maxWeight){
-		int n = weight.length;
+	public static int knapsack(int[] weight,int value[],int n,int maxWeight){
+		// int n = weight.length;
 		int[][] storage = new int[n+1][maxWeight+1];
 
 		for(int i=1;i<=n;i++) {
@@ -23,8 +21,8 @@ public class KnapsackDp {
 	}
 	
 	
-	public static int knapsackBetter(int[] weight,int value[],int maxWeight){
-		int n = weight.length;
+	public static int knapsackBetter(int[] weight,int value[],int n, int maxWeight){
+		// int n = weight.length;
 		
 		int[] storagePrev = new int[maxWeight+1];
 		int[] storageCurr = new int[maxWeight+1];
@@ -57,7 +55,7 @@ public class KnapsackDp {
 			value[i] = s.nextInt();
 		}
 		int maxWeight = s.nextInt();
-		System.out.println(knapsack(weight, value, maxWeight));
+		System.out.println(knapsack(weight, value, maxWeight,n));
 
 	}
 
